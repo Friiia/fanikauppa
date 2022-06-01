@@ -3,14 +3,19 @@ import './App.css';
 import productdata from './components/productdata.js'
 import {Products} from './components/products'
 import {useState} from 'react';
+import {Shoppingcart} from './components/shoppingcart'
 
 
 function App() {
-  const [products,SetProducts]=useState(productdata)
+  const [products,setProducts]=useState(productdata)
   console.log(products)
   return (
+    <div>
     <div className="App">
-      <Products products={products}/>
+       <h3>Tuotteet</h3>
+      <Products products={products} setProducts={setProducts}/>
+    </div>
+    <Shoppingcart products={products} setProducts={setProducts}/>
     </div>
   );
 }
